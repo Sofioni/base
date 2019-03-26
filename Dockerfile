@@ -1,6 +1,6 @@
 # This is the base for contrail specific children
 
-FROM scan.connect.redhat.com/ospid-59ce4b46-42b6-402f-bc52-5c28e5f8b6f9/partner-build-service:v1.0
+FROM omermajeed/contrail-vpp-general-base:v1.0
 ARG CONTRAIL_REGISTRY
 ARG CONTRAIL_CONTAINER_TAG
 
