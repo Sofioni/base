@@ -6,6 +6,8 @@ ARG CONTRAIL_CONTAINER_TAG
 
 ARG BASE_EXTRA_RPMS=""
 
+RUN sed -i 's/notify_only=.*/notify_only=0/' /etc/yum/pluginconf.d/search-disabled-repos.conf
+
 # note: ldconfig looks strange. contrail-lib installs shared libraries but do not call it...
 RUN mkdir -p -m 777 /var/crashes && \
     BASE_EXTRA_RPMS=$(echo $BASE_EXTRA_RPMS | tr -d '"' | tr ',' ' ') && \
